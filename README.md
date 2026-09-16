@@ -1,6 +1,9 @@
 # AI-Knowledge-Assistant-RAG-LUNORSOFT-PVT-LTD
 
-LUNORSOFT - INTERNSHIP RECRUITMENT - ROUND 1 - 2026 
+### Self Introduction - 
+Hello , Im Ishan Mani Singh , 2nd year student at VIT Chennai 2029 batch. Currently pursuing B.Tech in CSE (datascience).
+
+### LUNORSOFT - INTERNSHIP - ROUND 1 - 2026 
 
 This project is for internship role recruitment task for the startup LUNORSOFT TECHNOLOGIES PRIVATE LIMITED based https://lunor.online/ focused on AI assisted coding and learning based tools and technology. 
 
@@ -11,7 +14,36 @@ Note : Im not officially affiliated with the mentioned company and this is just 
  - python 
  - Llamaindex for RAG and vector embedding and document parsing 
  - gradio for WEBUI interface 
+ - Pillow to handle images
+ - pytesseract for OCR / can also use vllm but more expensive 
+ - pypdf but i have not explicitely used it its automatically handled with SimpleDirectoryReader which comes in llamaindex https://developers.llamaindex.ai/python/framework/module_guides/loading/simpledirectoryreader/
 
+
+# Base model LLM im using :
+
+LiquidAI: LFM2.5-2.6B (free) - liquid/lfm-2.5-2.6b:free - using open router https://openrouter.ai/liquid/lfm-2.5-2.6b:free 
+since deployed projects are preferred , i m using a free apikey based model , currently free. this model is known to be good at RAG based or tooluse based works.
+
+& 
+
+Google: Gemma 4 31B (free) - google/gemma-4-31b-it:free - https://openrouter.ai/google/gemma-4-31b-it:free
+
+& 
+
+Google: Gemma 4 26B A4B (free) - google/gemma-4-26b-a4b-it:free - https://openrouter.ai/google/gemma-4-26b-a4b-it:free
+
+
+
+# folder structure :
+
+ - Backend ; for backend code the main logic of the agents
+    - > __init.py__
+    - > parser.py pdf and image parser ( only two for now )
+    - > indexer.py Chunks text, generates OpenAI embeddings, and persists them into a local FAISS index.
+    - > agent.py-  Loads the FAISS index & calls the OpenAI model
+ - storage ; where i will store the FAISS vector embedding
+ - app.py ; the main code that launches the WEBUI gradio based 
+ - requirements.txt ; please run pip over it before running
 
 
 ### flaws in existing product that i noticed and would love to fix and work on: 

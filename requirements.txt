@@ -1,0 +1,10 @@
+llama-index>=0.10.0
+llama-index-vector-stores-faiss
+llama-index-embeddings-huggingface
+llama-index-llms-openai
+faiss-cpu
+gradio>=4.0.0
+pypdf
+pytesseract
+pillow
+python-dotenv
