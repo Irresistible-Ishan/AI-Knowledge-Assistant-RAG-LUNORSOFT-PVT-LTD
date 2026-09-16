@@ -16,7 +16,8 @@ Note : Im not officially affiliated with the mentioned company and this is just 
  - gradio for WEBUI interface 
  - Pillow to handle images
  - pytesseract for OCR / can also use vllm but more expensive 
- - pypdf but i have not explicitely used it its automatically handled with SimpleDirectoryReader which comes in llamaindex https://developers.llamaindex.ai/python/framework/module_guides/loading/simpledirectoryreader/
+ - pypdf but i have not explicitely used it its automatically handled with SimpleDirectoryReader which comes in llamaindex https://developers.llamaindex.ai/python/framework/module_guides/loading/simpledirectoryreader/ 
+ allowing only .png .jpg .jpeg .pdf .txt .md for now ( will add support for .doc .csv later)
 
 
 # Base model LLM im using :
