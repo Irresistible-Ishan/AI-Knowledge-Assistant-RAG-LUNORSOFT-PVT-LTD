@@ -6,10 +6,24 @@ This project is for internship role recruitment task for the startup LUNORSOFT T
 
 Note : Im not officially affiliated with the mentioned company and this is just for the task given for a recruitment process for learning purposes and assessment.
 
+
+# Tech Stack used :
+ - python 
+ - Llamaindex for RAG and vector embedding and document parsing 
+ - gradio for WEBUI interface 
+
+
+
 ### flaws in existing product that i noticed and would love to fix and work on: 
 https://lunor.online/
+Important : " The objective is not to simply create attractive screens. Candidates should demonstrate how 
+their redesign improves the experience for Lunorsoft users and why they made their design 
+decisions. "
 
+The biggest flaw i found in the existing product is that the chatbot given here for each module is not linked with any sort of context from the video , and i think rag or even if the captioning is small enough we can add it to the chatbot such that its context aware and revelent to the video so user can ask the queries directly related to the video without first telling it what the module is about. This really helps because i have notices big companies using the same tactic for this such as in youtube they provide gemini with the caption of the video and we can generate the caption of these modules using any speech to text model that will not be a huge issue. 
 ![image1](./images/lunor-improvement1.png)
+
+2nd flaw i found is which is not revelent to my task but i would still mention it is , the voice is very linear and very similar toned for the whole stretch which makes me fall asleep , i think the tone should change depending on the context , we can use new open source models which is better here. and it wont be that expensive too since its a one time module creation. 
 
 ## Choosing Option One : Build a Mini AI Knowledge Assistant 
 
@@ -72,11 +86,11 @@ Option 2: Fine-Tuning  Coding assistant trained on a custom dataset.  LoRA/QLoRA
 
 i have 2 options here , as i have explored lunorsoft website , and its about using the power of AI such as LLMs and more human like TTS for voice generation , and other things to generate educational and learning content , but the email also mentioned company focusses on assisted coding so i believe they are also planning to work on assisted coding tools which im very fond of as well. 
 
-The problem here with the option 2 is that while fine tuning a model you can only fine tune it upto certain extent to leave it still useful and generalised and not overfit on the existing knowledge , theres alot we cant feed it direct so we need to make sure llm stays intact for it to still fill those gaps that is the whole point of using LLMs for assisted learning it can fill generalised gaps and be super customised to your own tailored uses , and the problem again with option 2 is that you will have a trained model for only a certain topic and youll have to retrain it if you want it to focus on the a new topic or slightly connected topic, and the maxima we get after which the llms started to get worse with finetuning and not better is called catastrophic overtraining , and personally i have seen it in Image diffusion models. and thats is why im going with Option 1, becuase i think RAG is much more of a better option to generalise the help with any document we throw at it. and it will parse it and store it in the vector embedding and we can retrieve it based on the ongoign context using something like cosine similarity or any mathematical algorithmn this fixes the inherent issue in LLMs the biggest problems in LLMs which is context memory is limited and we need to make sure we fit only the most important things as per the ongoing conversation.
+The problem here with the option 2 is that while fine tuning a model you can only fine tune it upto certain extent to leave it still useful and generalised and not overfit on the existing knowledge , theres alot we cant feed it direct so we need to make sure llm stays intact for it to still fill those gaps that is the whole point of using LLMs for assisted learning it can fill generalised gaps and be super customised to your own tailored uses , and the problem again with option 2 is that you will have a trained model for only a certain topic and youll have to retrain it if you want it to focus on the a new topic or slightly connected topic, and the maxima we get after which the llms started to get worse with finetuning and not better is called Catastrophic forgetting , and personally i have seen it in Image diffusion models. and thats is why im going with Option 1, becuase i think RAG is much more of a better option to generalise the help with any document we throw at it. and it will parse it and store it in the vector embedding and we can retrieve it based on the ongoign context using something like cosine similarity or any mathematical algorithmn this fixes the inherent issue in LLMs the biggest problems in LLMs which is context memory is limited and we need to make sure we fit only the most important things as per the ongoing conversation.
 
-In early 2023 companies were prefering finetuned llms for specific custom uses and openAI even had a program for enterprises where they can contact them to build them their custom finetuned models. but now later on the methods such as mixture of experts and chain of thoughts really fixed these issues and the frontier models outperformed the finetuned ones. and people stopped preferring the finetuned models but then its is still useful for small distilled models for mass usecases such as the Lunor option 2 and also is her talk about LoRA based fine tuning then its even more cheaper to train than finetuning the whole model, low rank adaptation model is basically a layer that sits on top of the base model , that helps the model to track the path better to and to the more revelent results , i have trained LoRA models in Diffusion models so i know how impactful they are truely , thats why the option is still good, but im going with option 1, also if i consider it like this then yes the frontier models also have larger context memory now and so even the RAG may not be needed for general things but yeah lol, we are here considering the right balance and efficiency of the system and keeping it fesible for business and cost of model. we can also go with a hybrid option where we do train a LoRA model at same time we also apply RAG for more efficient context use. then i think that would be the best option but to keep it simple as this is a time constrained assignment i would stay with option1. 
+In early 2023 companies were prefering finetuned llms for specific custom uses and openAI even had a program for enterprises where they can contact them to build them their custom finetuned models. but now later on the methods such as mixture of experts and chain of thoughts really fixed these issues , im not saying it directly fixed the flaws of finetuning but it really helped models to work more efficiently and the frontier models outperformed the finetuned ones. and people stopped preferring the finetuned models but then its is still useful for small distilled models for mass usecases such as the Lunor option 2 and also is her talk about LoRA based fine tuning then its even more cheaper to train than finetuning the whole model, low rank adaptation model is basically a layer that sits on top of the base model that keeps the original weights frozen and puts its own trainable adaptor matricies in selected layers , that helps the model to track the path better to and to the more revelent results , i have trained LoRA models in Diffusion models so i know how impactful they are truely , thats why the option is still good, but im going with option 1, also if i consider it like this then yes the frontier models also have larger context memory now and so even the RAG may not be needed for general things but yeah lol, we are here considering the right balance and efficiency of the system and keeping it fesible for business and cost of model. we can also go with a hybrid option where we do train a LoRA model at same time we also apply RAG for more efficient context use. then i think that would be the best option but to keep it simple as this is a time constrained assignment i would stay with option1. 
 
-(note : for transparency i didnt not just ask this above information from an AI , i know this because i have closely following almost every research paper and new models and methods that was being developed by companies since 2022 dec 15 when the very first gpt 3 model was released to the public by OPENAI , i used multiple sources such as youtube channels such as two minute papers and more to stay upto date with these)
+(note : for transparency i didnt not just ask this above information from an AI , i know this because i have closely following almost every research paper and new models and methods that was being developed by companies since 2022 dec 15 when the very first gpt 3 family model was released to the public by OPENAI , i used multiple sources such as youtube channels such as two minute papers and more to stay upto date with these)
 
 Sorry for such a long paragraph , Im just trying to show my reasoning behind why i choose this option , ill try to keep it concise.
 
@@ -88,6 +102,18 @@ https://gradio.app/ , https://github.com/gradio-app/gradio ,
 https://developers.llamaindex.ai/python/framework-api-reference/storage/vector_store/faiss/ , 
 https://youtu.be/-W2JdSl1v48?si=ETc4fHUyeD1eKlrO
 Gemini 3.1 Pro with extended thinking to understand docs better.
+
+### Why im using faiss and not generic .pkl for vector embedding for RAG
+Normally for normal personal projects i prefer to do things normally from scratch myself but since working for yourself and making something at system level for mass distribution and with better efficiency faiss facebook ai similarity search is much better of an option as ive heard that it uses more optimised algorithmn to store the embedding and i think it uses clustering to cluster similar chunk in specific spot in the embedding so it dosent have to go through every vector to search for something like cosine similarity. Approximate Nearest Neighbor and KNN is used in it. this is really exciting because its a new framework that im gonna be learning to use. really great opportunity 
+https://youtu.be/chz74Mtd1AA?si=S9dRdMf-LgmV89-o
+https://youtu.be/DRbjpuqOsjk?si=0X1T7V76nfJ2tucG
+Im planning to use Llamaindex to use faiss 
+https://developers.llamaindex.ai/python/framework-api-reference/storage/vector_store/faiss/
+
+
+### Im choosing to use llamaindex instead of langchain because this task is simple enough to not use langchain and llamainde would work just fine for this.
+
+note : transparency of use of AI , i have asked AI for project folder structuring because im still learning and im not that good at writing efficient clean code with proper readible and findable code structure 
 
 
 
