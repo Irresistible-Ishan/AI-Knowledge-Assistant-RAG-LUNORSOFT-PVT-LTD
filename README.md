@@ -9,7 +9,7 @@ This project is for internship role recruitment task for the startup LUNORSOFT T
 
 Note : Im not officially affiliated with the mentioned company and this is just for the task given for a recruitment process for learning purposes and assessment.
 
-## Transparency : I have mentioned "Transparency" tags in readme to explain where i have used help of AI/LLMs. (example : customer wrapper for Onxx to work with llamaindex)
+### Transparency : I have mentioned "Transparency" tags in readme to explain where i have used help of AI/LLMs. (example : customer wrapper for Onxx to work with llamaindex)
 
 
 # Tech Stack used :
@@ -159,7 +159,7 @@ https://developers.llamaindex.ai/python/framework-api-reference/storage/vector_s
 
 ### Im choosing to use llamaindex instead of langchain because this task is simple enough to not use langchain and llamainde would work just fine for this.
 
-# transparency : i have asked AI for project folder structuring because im still learning and im not that good at writing efficient clean code with proper readible and findable code structure 
+transparency : i have asked AI for project folder structuring because im still learning and im not that good at writing efficient clean code with proper readible and findable code structure 
 
 ### Pre vectorised books pdfs - why i did so 
 alright so the biggest problem with RAG is that we have to vectorise the data in realtime on the edge server , and since im going to approach it with deployability on vercel or anything, for free tier i cant expect great computational power ,and the embedding api are all paid so im gonna have to locally create embedding for multiple pdfs and give option to choose them from the book , i do have some free alternatives but its really unreliable and unpredictable maybe it wont work when the reviewrs test it , so all i can do right now is pre provide the embedding with pdfs and images 
@@ -168,10 +168,15 @@ and since Chroma or Pinecone does allow meta data filtering for scenerios where 
 
 Im also providing onnx-community/embeddinggemma-300m-ONNX , which is super light weight and may run in deployment. so im using this for real time and permutation of pre vectorised embedding 
 
-# Transparency : I had to take AI's help here to make a customer wrapper for onxx embedder that works with llamaindex because there were no docs for it directly , used AI's help in custom_embedder.py
+Transparency : I had to take AI's help here to make a customer wrapper for onxx embedder that works with llamaindex because there were no docs for it directly , used AI's help in custom_embedder.py
 
 Ok so i am also done with building the parser.py which parses the docs pdfs and images , im also done with made 
 and now moving onto the agents.py and the webui app.py using gradio :) 
 
 for agents as i have already mentioned since this is deplynment focussed , im going to be adding openrouter API using free models for this project , cuz i dont have paid models api. this will definitely reduce the ability of tooluse rag mcp etc but it will work still. for the given scenerio
 
+Here im going to update the parser and finish the indexer such that if the pdf is less than 10 pages or if its an image input then theres no need to make it an embedding , it should directly OCR the content using pytesseract and put it in the current prompt context rather than embedding it and doing rag because its not large enough to affect the context memory. 
+
+the agents.py is done and it has 2 modes of woking one is as i already mentioned above another is the embedding based 
+
+Transparency : I used help of AI for gradio interface docs & code for app.py
