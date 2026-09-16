@@ -9,25 +9,35 @@ This project is for internship role recruitment task for the startup LUNORSOFT T
 
 Note : Im not officially affiliated with the mentioned company and this is just for the task given for a recruitment process for learning purposes and assessment.
 
+## Transparency : I have mentioned "Transparency" tags in readme to explain where i have used help of AI/LLMs. (example : customer wrapper for Onxx to work with llamaindex)
+
 
 # Tech Stack used :
+ - huggingface_hub - to download models such as embedder
+ - transformers for tokenisation of parsed data 
  - python 
  - Llamaindex for RAG and vector embedding and document parsing 
  - gradio for WEBUI interface 
  - Pillow to handle images
  - pytesseract for OCR / can also use vllm but more expensive 
  - pypdf but i have not explicitely used it its automatically handled with SimpleDirectoryReader which comes in llamaindex https://developers.llamaindex.ai/python/framework/module_guides/loading/simpledirectoryreader/ 
- allowing only .png .jpg .jpeg .pdf .txt .md for now ( will add support for .doc .csv later)
+ - llama-index-embeddings-huggingface for embedding converter 
+ - llama-index-vector-stores-faiss for FAISS vector embedding 
+ - llama-index-llms-openai generalised openai api structure and llm handler (to run using ollama local models or openrouter without changing the code)
+
+## Important : Please note that i have created vector embedding of multiple PDFs and books before hand because of lack of computational power in deploynment and free api. read at line 157 in readme. while at same time Im also providing realtime embedding using Onxx onnx-community/embeddinggemma-300m-ONNX , to make it light weight.
 
 
-# Base model LLM im using :
+# Base model LLM & embedder im using :
+
+onnx-community/embeddinggemma-300m-ONNX from huggingface for light weight deployable embedder. 
 
 LiquidAI: LFM2.5-2.6B (free) - liquid/lfm-2.5-2.6b:free - using open router https://openrouter.ai/liquid/lfm-2.5-2.6b:free 
 since deployed projects are preferred , i m using a free apikey based model , currently free. this model is known to be good at RAG based or tooluse based works.
 
 & 
 
-Google: Gemma 4 31B (free) - google/gemma-4-31b-it:free - https://openrouter.ai/google/gemma-4-31b-it:free
+Google: Gemma 4 31B (free) - google/gemma-4-31b-it:free - https://openrouter.ai/google/gemma-4-31b-it:free (main priority rest are fallback backups)
 
 & 
 
@@ -39,7 +49,7 @@ Google: Gemma 4 26B A4B (free) - google/gemma-4-26b-a4b-it:free - https://openro
 
  - Backend ; for backend code the main logic of the agents
     - > __init.py__
-    - > parser.py pdf and image parser ( only two for now )
+    - > parser.py docs parser code allowing only .png .jpg .jpeg .pdf .txt .md for now ( will add support for .doc .csv later)
     - > indexer.py Chunks text, generates OpenAI embeddings, and persists them into a local FAISS index.
     - > agent.py-  Loads the FAISS index & calls the OpenAI model
  - storage ; where i will store the FAISS vector embedding
@@ -146,7 +156,13 @@ https://developers.llamaindex.ai/python/framework-api-reference/storage/vector_s
 
 ### Im choosing to use llamaindex instead of langchain because this task is simple enough to not use langchain and llamainde would work just fine for this.
 
-note : transparency of use of AI , i have asked AI for project folder structuring because im still learning and im not that good at writing efficient clean code with proper readible and findable code structure 
+# transparency : i have asked AI for project folder structuring because im still learning and im not that good at writing efficient clean code with proper readible and findable code structure 
 
+### Pre vectorised books pdfs - why i did so 
+alright so the biggest problem with RAG is that we have to vectorise the data in realtime on the edge server , and since im going to approach it with deployability on vercel or anything, for free tier i cant expect great computational power ,and the embedding api are all paid so im gonna have to locally create embedding for multiple pdfs and give option to choose them from the book , i do have some free alternatives but its really unreliable and unpredictable maybe it wont work when the reviewrs test it , so all i can do right now is pre provide the embedding with pdfs and images 
 
+and since Chroma or Pinecone does allow meta data filtering for scenerios where if i wanted to have both book A and B in the RAG loaded , then if i wanted just A and wanted to remove B its possible not not in FAISS. so im going to use every possible Permutations isolated embedding for 5 book pdfs on the topics such as politics and geography because things like these are where AI hallucinates. 
 
+Im also providing onnx-community/embeddinggemma-300m-ONNX , which is super light weight and may run in deployment. so im using this for real time and permutation of pre vectorised embedding 
+
+# Transparency : I had to take AI's help here to make a customer wrapper for onxx embedder that works with llamaindex because there were no docs for it directly 
