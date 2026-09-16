@@ -8,3 +8,7 @@ pypdf
 pytesseract
 pillow
 python-dotenv
+onnxruntime 
+transformers 
+huggingface_hub
+fonttools

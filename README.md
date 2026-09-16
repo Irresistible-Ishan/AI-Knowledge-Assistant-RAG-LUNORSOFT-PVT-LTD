@@ -14,8 +14,9 @@ Note : Im not officially affiliated with the mentioned company and this is just 
 
 # Tech Stack used :
  - huggingface_hub - to download models such as embedder
- - transformers for tokenisation of parsed data 
- - python 
+ - transformers for tokenisation of parsed data
+ - onnxruntime to write customer wrapper for onxx embedder handling with llamaindex 
+ - python 3.12
  - Llamaindex for RAG and vector embedding and document parsing 
  - gradio for WEBUI interface 
  - Pillow to handle images
@@ -26,7 +27,9 @@ Note : Im not officially affiliated with the mentioned company and this is just 
  - llama-index-llms-openai generalised openai api structure and llm handler (to run using ollama local models or openrouter without changing the code)
 
 ## Important : Please note that i have created vector embedding of multiple PDFs and books before hand because of lack of computational power in deploynment and free api. read at line 157 in readme. while at same time Im also providing realtime embedding using Onxx onnx-community/embeddinggemma-300m-ONNX , to make it light weight.
-
+Applying transformations: 100%|████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.02s/it]
+Generating embeddings:  30%|███████████████                                   | 320/1063 [03:55<07:40,  1.61it/s]
+i uploaded a book and the processing time on i5 11400H with onxx model is still alot , not good for deploynment so ill precompute the embedding for some research papers and book for testing purposes in deploynment! thanks and sorry for inconvinence.
 
 # Base model LLM & embedder im using :
 
@@ -165,4 +168,10 @@ and since Chroma or Pinecone does allow meta data filtering for scenerios where 
 
 Im also providing onnx-community/embeddinggemma-300m-ONNX , which is super light weight and may run in deployment. so im using this for real time and permutation of pre vectorised embedding 
 
-# Transparency : I had to take AI's help here to make a customer wrapper for onxx embedder that works with llamaindex because there were no docs for it directly 
+# Transparency : I had to take AI's help here to make a customer wrapper for onxx embedder that works with llamaindex because there were no docs for it directly , used AI's help in custom_embedder.py
+
+Ok so i am also done with building the parser.py which parses the docs pdfs and images , im also done with made 
+and now moving onto the agents.py and the webui app.py using gradio :) 
+
+for agents as i have already mentioned since this is deplynment focussed , im going to be adding openrouter API using free models for this project , cuz i dont have paid models api. this will definitely reduce the ability of tooluse rag mcp etc but it will work still. for the given scenerio
+
