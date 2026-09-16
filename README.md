@@ -6,8 +6,12 @@ This project is for internship role recruitment task for the startup LUNORSOFT T
 
 Note : Im not officially affiliated with the mentioned company and this is just for the task given for a recruitment process for learning purposes and assessment.
 
-## Choosing OPTION 1 : RAG Assistant  Chatbot answering questions based on provided documents.  Python, LangChain/LlamaIndex, Vector Store (FAISS), Streamlit.  Repo, UI Demo, README.
+### flaws in existing product that i noticed and would love to fix and work on: 
+https://lunor.online/
 
+![image1](./images/lunor-improvement1.png)
+
+## Choosing Option One : Build a Mini AI Knowledge Assistant 
 
 # -------------------------------------
 ### mentioned things :
@@ -82,3 +86,8 @@ https://developers.llamaindex.ai/python/framework/understanding/rag/ ,
 https://docs.langchain.com/oss/python/langgraph/agentic-rag , 
 https://gradio.app/ , https://github.com/gradio-app/gradio , 
 https://developers.llamaindex.ai/python/framework-api-reference/storage/vector_store/faiss/ , 
+https://youtu.be/-W2JdSl1v48?si=ETc4fHUyeD1eKlrO
+Gemini 3.1 Pro with extended thinking to understand docs better.
+
+
+
