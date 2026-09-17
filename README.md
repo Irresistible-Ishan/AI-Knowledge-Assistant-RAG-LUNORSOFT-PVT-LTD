@@ -6,6 +6,15 @@ i tried vercel and render , the free tier ofc couldnt handle it , please use onl
 ### Self Introduction - 
 Hello , Im Ishan Mani Singh , 2nd year student at VIT Chennai 2029 batch. Currently pursuing B.Tech in CSE (datascience).
 
+# Examples :
+
+
+
+
+
+
+
+
 ### LUNORSOFT - INTERNSHIP - ROUND 1 - 2026 
 
 This project is for internship role recruitment task for the startup LUNORSOFT TECHNOLOGIES PRIVATE LIMITED based https://lunor.online/ focused on AI assisted coding and learning based tools and technology. 
@@ -73,6 +82,11 @@ The biggest flaw i found in the existing product is that the chatbot given here 
 ![image1](./images/lunor-improvement1.png)
 
 2nd flaw i found is which is not revelent to my task but i would still mention it is , the voice is very linear and very similar toned for the whole stretch which makes me fall asleep , i think the tone should change depending on the context , we can use new open source models which is better here. and it wont be that expensive too since its a one time module creation. 
+
+
+# Example : 
+
+
 
 ## Choosing Option One : Build a Mini AI Knowledge Assistant 
 
@@ -191,3 +205,6 @@ llama-index-llms-openai-like - i need to use this to bypass safety models list o
 
 Fallback triggered: google/gemma-4-31b-it:free failed. Error: Unknown model 'google/gemma-4-31b-it:free'. Please provide a valid OpenAI model name in: o1, o1-2024-12-17, o1-pro, o1-pro-2025-03-19, o1-preview, o1-preview-2024-09-12, o1-mini, o1-mini-2024-09-12, o3-mini, o3-mini-2025-01-31, o3, o3-2025-04-16, o3-pro, o3-pro-2025-06-10, o4-mini, o4-mini-2025-04-16, gpt-5, gpt-5-2025-08-07, gpt-5-chat, gpt-5-chat-latest, gpt-5-mini, gpt-5-mini-2025-08-07, gpt-5-nano, gpt-5-nano-2025-08-07, gpt-5-pro, gpt-5-pro-2025-10-06, gpt-5.1, gpt-5.1-2025-11-13, gpt-5.1-chat-latest, gpt-5.2, gpt-5.2-2025-12-11, gpt-5.2-chat-latest, gpt-5.3, gpt-5.3-chat-latest, gpt-5.4, gpt-5.4-2026-03-05, gpt-5.4-mini, gpt-5.4-nano, gpt-5.4-chat-latest, gpt-5.5, gpt-5.5-2026-04-23, gpt-5.6-sol, gpt-5.6-luna, gpt-5.6-terra, gpt-4, gpt-4-32k, gpt-4-1106-preview, gpt-4-0125-preview, gpt-4-turbo-preview, gpt-4-vision-preview, gpt-4-1106-vision-preview, gpt-4-turbo-2024-04-09, gpt-4-turbo, gpt-4o, gpt-4o-audio-preview, gpt-4o-audio-preview-2024-12-17, gpt-4o-audio-preview-2024-10-01, gpt-4o-mini-audio-preview, gpt-4o-mini-audio-preview-2024-12-17, gpt-4o-2024-05-13, gpt-4o-2024-08-06, gpt-4o-2024-11-20, gpt-4.5-preview, gpt-4.5-preview-2025-02-27, chatgpt-4o-latest, gpt-4o-mini, gpt-4o-mini-2024-07-18, gpt-4-0613, gpt-4-32k-0613, gpt-4-0314, gpt-4-32k-0314, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-4.1-2025-04-14, gpt-4.1-mini-2025-04-14, gpt-4.1-nano-2025-04-14, gpt-3.5-turbo, gpt-3.5-turbo-16k, gpt-3.5-turbo-0125, gpt-3.5-turbo-1106, gpt-3.5-turbo-0613, gpt-3.5-turbo-16k-0613, gpt-3.5-turbo-0301, text-davinci-003, text-davinci-002, gpt-3.5-turbo-instruct, text-ada-001, text-babbage-001, text-curie-001, ada, babbage, curie, davinci, gpt-35-turbo-16k, gpt-35-turbo, gpt-35-turbo-0125, gpt-35-turbo-1106, gpt-35-turbo-0613, gpt-35-turbo-16k-0613
 
+
+
+thats all i have deployed the code , and have finished it , i have also tried to finish the bonus points 
