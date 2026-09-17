@@ -6,14 +6,6 @@ i tried vercel and render , the free tier ofc couldnt handle it , please use onl
 ### Self Introduction - 
 Hello , Im Ishan Mani Singh , 2nd year student at VIT Chennai 2029 batch. Currently pursuing B.Tech in CSE (datascience).
 
-# Examples :
-
-
-
-
-
-
-
 
 ### LUNORSOFT - INTERNSHIP - ROUND 1 - 2026 
 
