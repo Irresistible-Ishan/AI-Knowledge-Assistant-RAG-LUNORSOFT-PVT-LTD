@@ -86,7 +86,25 @@ The biggest flaw i found in the existing product is that the chatbot given here 
 
 # Example : 
 
+## Live Deployment & UI
+![Hugging Face Deployment](images/deployedHFspace.png)
+![Full Chat UI with History](images/finalfulldemowithconvhistory.png)
 
+## Dynamic Document Processing
+| Document Upload & Indexing | Smart Routing (Bypassing Embedding for Short Docs) |
+| :---: | :---: |
+| ![Upload](images/example5doucmentUpload.png) | ![Direct Injection](images/example6noembeddingdirect.png) |
+
+## RAG vs. Standard LLM (The Difference)
+| Standard LLM Hallucination | Grounded RAG Response |
+| :---: | :---: |
+| ![No RAG 1](images/example1norag.png) | ![With RAG 1](images/example1rag.png) |
+| ![No RAG 2](images/example2norag.png) | ![With RAG 2](images/example2rag.png) |
+
+## Bonus Features
+| Precise Source Citations | Multi-Document Retrieval |
+| :---: | :---: |
+| ![Citations](images/example4citations.png) | ![Multi Doc](images/example3multidocument.png) |
 
 ## Choosing Option One : Build a Mini AI Knowledge Assistant 
 
