@@ -63,13 +63,15 @@ Google: Gemma 4 26B A4B (free) - google/gemma-4-26b-a4b-it:free - https://openro
 # folder structure :
 
  - Backend ; for backend code the main logic of the agents
-    - > __init.py__
+    - > custom_embedder.py this has custom wrapper to handle onxx model
+    - > precompute.py this handles computing vector embedding for some pregiven files because in deploynment the hardward will crash on free tier
     - > parser.py docs parser code allowing only .png .jpg .jpeg .pdf .txt .md for now ( will add support for .doc .csv later)
     - > indexer.py Chunks text, generates OpenAI embeddings, and persists them into a local FAISS index.
     - > agent.py-  Loads the FAISS index & calls the OpenAI model
- - storage ; where i will store the FAISS vector embedding
+ - storage ; where i will store the FAISS vector embedding 
  - app.py ; the main code that launches the WEBUI gradio based 
  - requirements.txt ; please run pip over it before running
+ - test-api.py ; to test if open router api is working ornot 
 
 
 ### flaws in existing product that i noticed and would love to fix and work on: 
