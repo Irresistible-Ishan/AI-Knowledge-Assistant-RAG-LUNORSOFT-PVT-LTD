@@ -28,8 +28,9 @@ def process_and_index(file_paths : list[str] , persist_dir : str = "storage/temp
         show_progress = True
     )
     os.makedirs(persist_dir , exist_ok= True)
-    index.storageCTX.persist( persist_dir = persist_dir)
-    return {"mode": "indexed", "data": index}
+
+    index.storage_context.persist( persist_dir = persist_dir)
+    return {"mode": "index" , "data": index}
 
 def load_precomputed_index(book_name: str, base_storage: str = "storage"):
     persist_dir = os.path.join(base_storage, book_name)
