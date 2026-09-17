@@ -1,5 +1,8 @@
 # AI-Knowledge-Assistant-RAG-LUNORSOFT-PVT-LTD
 
+# Deployed example at : https://huggingface.co/spaces/CODE7X/AIKnowledgeAssistantISHANMANISINGH
+i tried vercel and render , the free tier ofc couldnt handle it , please use only pre computed embedding otherwise the free deploynment may crash, but yes it does work if u try. 
+
 ### Self Introduction - 
 Hello , Im Ishan Mani Singh , 2nd year student at VIT Chennai 2029 batch. Currently pursuing B.Tech in CSE (datascience).
 

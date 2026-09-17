@@ -13,3 +13,4 @@ transformers
 huggingface_hub
 fonttools
 llama-index-llms-openai-like
+spaces
